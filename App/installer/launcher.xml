@@ -1,0 +1,26 @@
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>../store/Get Organized.jar</jar>
+  <outfile>../store/Get Organized.exe</outfile>
+  <errTitle>Install Java</errTitle>
+  <cmdLine></cmdLine>
+  <chdir></chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://www.java.com/download</downloadUrl>
+  <supportUrl>http://alexlaird.name/projects/get-organized/support</supportUrl>
+  <customProcName>true</customProcName>
+  <stayAlive>false</stayAlive>
+  <manifest></manifest>
+  <icon>../icons/go.ico</icon>
+  <singleInstance>
+    <mutexName>getorganized</mutexName>
+    <windowTitle></windowTitle>
+  </singleInstance>
+  <jre>
+    <path></path>
+    <minVersion>1.6.0</minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+  </jre>
+</launch4jConfig>

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See commented blocks below for -->
+<!-- some examples of how to customize the build. -->
+<!-- (If you delete it and reopen the project it will be recreated.) -->
+<!-- By default, only the Clean and Build commands use this build script. -->
+<!-- Commands such as Run, Debug, and Test only use this build script if -->
+<!-- the Compile on Save feature is turned off for the project. -->
+<!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
+<!-- in the project's Psroject Properties dialog box.-->
+<project name="GetOrganized" default="default" basedir=".">
+    <description>Builds, tests, and runs the project GetOrganized.</description>
+    <import file="nbproject/build-impl.xml"/>
+    <!--
+
+    There exist several targets which are by default empty and which can be 
+    used for execution of your tasks. These targets are usually executed 
+    before and after some main targets. They are: 
+
+      -pre-init:                 called before initialization of project properties
+      -post-init:                called after initialization of project properties
+      -pre-compile:              called before javac compilation
+      -post-compile:             called after javac compilation
+      -pre-compile-single:       called before javac compilation of single file
+      -post-compile-single:      called after javac compilation of single file
+      -pre-compile-test:         called before javac compilation of JUnit tests
+      -post-compile-test:        called after javac compilation of JUnit tests
+      -pre-compile-test-single:  called before javac compilation of single JUnit test
+      -post-compile-test-single: called after javac compilation of single JUunit test
+      -pre-jar:                  called before JAR building
+      -post-jar:                 called after JAR building
+      -post-clean:               called after cleaning build products
+
+    (Targets beginning with '-' are not intended to be called on their own.)
+
+    Example of inserting an obfuscator after compilation could look like this:
+
+        <target name="-post-compile">
+            <obfuscate>
+                <fileset dir="${build.classes.dir}"/>
+            </obfuscate>
+        </target>
+
+    For list of available properties check the imported 
+    nbproject/build-impl.xml file. 
+
+
+    Another way to customize the build is by overriding existing main targets.
+    The targets of interest are: 
+
+      -init-macrodef-javac:     defines macro for javac compilation
+      -init-macrodef-junit:     defines macro for junit execution
+      -init-macrodef-debug:     defines macro for class debugging
+      -init-macrodef-java:      defines macro for class execution
+      -do-jar-with-manifest:    JAR building (if you are using a manifest)
+      -do-jar-without-manifest: JAR building (if you are not using a manifest)
+      run:                      execution of project 
+      -javadoc-build:           Javadoc generation
+      test-report:              JUnit report generation
+
+    An example of overriding the target for project execution could look like this:
+
+        <target name="run" depends="GetOrganized-impl.jar">
+            <exec dir="bin" executable="launcher.exe">
+                <arg file="${dist.jar}"/>
+            </exec>
+        </target>
+
+    Notice that the overridden target depends on the jar target and not only on 
+    the compile target as the regular run target does. Again, for a list of available 
+    properties which you can use, check the target you are overriding in the
+    nbproject/build-impl.xml file. 
+
+    -->
+    
+    <!-- Determine OS -->
+    <condition property="is.mac">
+        <os family="mac" />
+    </condition>
+
+    <condition property="is.linux">
+        <os family="unix" />
+    </condition>
+
+    <condition property="is.windows">
+        <os family="windows" />
+    </condition>
+
+    <condition property="is.linux.or.windows">
+        <or>
+            <os family="unix" />
+            <os family="windows" />
+        </or>
+    </condition>
+
+    <!-- Settings -->
+    <property name="store.dir" value="store" />
+
+    <property name="launch4j.dir" value="${basedir}/../../Tools/Launch4j" />
+    <condition property="python.exe" value="${basedir}/../../Tools/Python/App/python.exe" else="python">
+        <os family="windows" />
+    </condition>
+    <property name="freeze" value="${basedir}/../../Tools/freeze" />
+    <property name="inno.exe" value="${basedir}/../../Tools/InnoSetup/App/InnoSetup/Compil32.exe" />
+
+    <taskdef name="launch4j"
+        classname="net.sf.launch4j.ant.Launch4jTask"
+        classpath="${launch4j.dir}/launch4j.jar:${launch4j.dir}/lib/xstream.jar" />
+
+    <target name="package-for-store" depends="verify-bundles,clean,jar">
+        
+        <property name="store.jar.name" value="Get Organized" />
+
+        <!-- don't edit below this line -->
+        <property name="store.jar" value="${store.dir}/${store.jar.name}.jar"/>
+
+        <echo message="Packaging ${application.title} into a single JAR at ${store.jar}"/>
+
+        <delete dir="${store.dir}"/>
+        <mkdir dir="${store.dir}"/>
+
+        <jar destfile="${store.dir}/temp_final.jar" filesetmanifest="skip">
+            <zipgroupfileset dir="dist" includes="*.jar" />
+            <zipgroupfileset dir="dist/lib" includes="*.jar" />
+
+            <manifest>
+                <attribute name="Main-Class" value="${main.class}" />
+            </manifest>
+        </jar>
+
+        <zip destfile="${store.jar}">
+            <zipfileset src="${store.dir}/temp_final.jar"
+            excludes="META-INF/*.SF, META-INF/*.DSA, META-INF/*.RSA" />
+        </zip>
+
+        <antcall target="launch4jtarget" />
+
+        <delete file="${store.dir}/temp_final.jar" />
+    </target>
+
+    <target name="verify-bundles">
+        <exec executable="${python.exe}" dir="." failonerror="true">
+            <arg value="scripts/VerifyResource.py" />
+        </exec>
+    </target>
+    
+    <target name="launch4jtarget" if="is.windows">
+        <!-- Create Windows launcher -->
+        <echo message="Creating Windows launcher using launch4j at ${launch4j.dir}" />
+        <launch4j configFile="installer/launcher.xml" />
+    </target>
+
+    <target name="create-installer" depends="package-for-store">
+        <!-- Validate and update all version numbers -->
+        <exec executable="${python.exe}" dir=".">
+            <arg value="scripts/ValidateVersion.py" />
+            <arg value="0" />
+        </exec>
+        <!-- Retrieve the latest version number -->
+        <exec executable="${python.exe}" dir="." outputproperty="verNumOnes">
+            <arg value="scripts/ValidateVersion.py" />
+            <arg value="1" />
+            <arg value="True" />
+        </exec>
+        <exec executable="${python.exe}" dir="." outputproperty="verNumTenths">
+            <arg value="scripts/ValidateVersion.py" />
+            <arg value="2" />
+            <arg value="True" />
+        </exec>
+        <exec executable="${python.exe}" dir="." outputproperty="verNumHundreths">
+            <arg value="scripts/ValidateVersion.py" />
+            <arg value="3" />
+            <arg value="True" />
+        </exec>
+        
+        <echo message="Building installer(s) and package(s) for ${application.title}"/>
+
+        <!-- Move needed files to store -->
+        <copy todir="${store.dir}">
+                <fileset file="icons/go.ico" />
+                <fileset file="icons/go.icns" />
+                <fileset file="icons/uninstall.ico" />
+                <fileset file="images/logo.pdf" />
+                <fileset file="installer/Windows.iss" />
+                <fileset file="installer/OSX.packproj" />
+                <fileset file="installer/donate.sh" />
+                <fileset file="installer/license.txt" />
+                <fileset file="installer/license.html" />
+                <fileset file="installer/releasenotes.html" />
+        </copy>
+
+        <!-- Generate various packages -->
+        <antcall target="-windows-installer" />
+        <antcall target="-osx-bundle" />
+        <antcall target="-zip-package" />
+
+        <!-- Remove temp files -->
+        <delete>
+                <fileset file="${store.dir}/go.ico" />
+                <fileset file="${store.dir}/go.icns" />
+                <fileset file="${store.dir}/uninstall.ico" />
+                <fileset file="${store.dir}/logo.pdf" />
+                <fileset file="${store.dir}/Windows.iss" />
+                <fileset file="${store.dir}/OSX.packproj" />
+                <fileset file="${store.dir}/donate.sh" />
+                <fileset file="${store.dir}/license.txt" />
+                <fileset file="${store.dir}/license.html" />
+                <fileset file="${store.dir}/releasenotes.html" />
+        </delete>
+    </target>
+
+    <target name="-windows-installer" if="is.windows">
+        <echo message="Creating Windows installer" />
+
+        <exec executable="${inno.exe}" dir="${store.dir}" resultproperty="build.result" searchpath="true">
+                <arg value="/cc"/>
+                <arg value="Windows.iss" />
+        </exec>
+
+        <!-- Move (if needed) to file with a proper name -->
+        <move file="${store.dir}/setup.exe" tofile="${store.dir}/GetOrganizedSetup.exe" />
+        <echo message="Windows installer placed in ${store.dir}/Get Organized/Installer" />
+    </target>
+
+    <target name="-zip-package" if="is.windows">
+        <echo message="Creating archive of files" />
+        <move file="${store.dir}/Get Organized.jar" tofile="${store.dir}/Get Organized Portable.jar" />
+        <zip destfile="${store.dir}/GetOrganized.zip">
+                <zipfileset file="${store.dir}/Get Organized Portable.jar" />
+                <zipfileset file="${store.dir}/license.html" />
+                <zipfileset file="${store.dir}/releasenotes.html" />
+        </zip>
+        <move file="${store.dir}/Get Organized Portable.jar" tofile="${store.dir}/Get Organized.jar" />
+        <echo message="Zip file placed in ${store.dir}/Get Organized/Installer" />
+    </target>
+
+    <target name="-osx-bundle" if="is.mac">
+        <taskdef name="jarbundler"
+            classname="net.sourceforge.jarbundler.JarBundler"
+            classpath="${basedir}/../../Tools/jarbundler-2.2.0.jar" />
+
+        <echo message="Creating JAR bundle for OS X" />
+        <jarbundler dir="${store.dir}"
+                    name="Get Organized"
+                    mainclass="GetOrganized"
+                    jar="${store.dir}/Get Organized.jar"
+                    icon="${store.dir}/go.icns"
+                    infostring="Copyright © 2012 Alex Laird."
+                    jvmversion="1.6+"
+                    signature="ldgo"
+                    vmoptions="Xdock:name=&quot;Get Organized&quot;"
+                    bundleid="adl.go.${verNumOnes}.${verNumTenths}${verNumHundreths}"
+                    shortname="Get Organized"/>
+        <echo message="Creating OS X installer" />
+        <exec executable="${freeze}" dir="${store.dir}">
+            <arg value="OSX.packproj" />
+        </exec>
+
+        <!-- Move needed files to proper location on the computer -->
+        <delete file="${store.dir}/GetOrganizedSetup.pkg.zip" />
+        <zip destfile="${store.dir}/build/Get Organized.zip" basedir="${store.dir}/build/Get Organized.pkg">
+            <zipfileset file="${store.dir}/build/Get Organized.pkg" />
+        </zip>
+        <move file="${store.dir}/build/Get Organized.zip" tofile="${store.dir}/GetOrganizedSetup.pkg.zip" />
+        <delete dir="${store.dir}/build" />
+        <echo message="OS X installer placed in ${store.dir}/Get Organized/Installer" />
+    </target>
+</project>
