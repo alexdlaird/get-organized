@@ -4,3 +4,7 @@ App/build/*
 Updater/build/*
 *.class
 *.jar
+/JCalendar_GO/build/
+/Updater/dist/
+/App/dist/
+App/store/

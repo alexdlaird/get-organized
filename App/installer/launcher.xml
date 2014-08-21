@@ -1,8 +1,8 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>../build/artifacts/App.jar</jar>
-  <outfile>../build/artifacts/Get Organized.exe</outfile>
+  <jar>../store/Get Organized.jar</jar>
+  <outfile>../store/Get Organized.exe</outfile>
   <errTitle>Install Java</errTitle>
   <cmdLine></cmdLine>
   <chdir></chdir>
