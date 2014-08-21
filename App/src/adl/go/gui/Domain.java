@@ -73,7 +73,7 @@ public class Domain
      * The version number, which is used in the JFrame title, the About dialog
      * and when checking for updates.
      */
-    public static final String VERSION = "1.08";
+    public static final String VERSION = "1.09";
     /**
      * The current working directory.
      */
