@@ -99,6 +99,10 @@ public class Preferences
      */
     public boolean dontShowGettingStarted = false;
     /**
+     * True if the Helium dialog should not be shown, false if it should otherwise.
+     */
+    public boolean dontShowHelium = false;
+    /**
      * The list of colors for each priority.
      */
     public Color[] priorityColors = new Color[5];
@@ -369,6 +373,13 @@ public class Preferences
         catch (ArrayIndexOutOfBoundsException ex)
         {
         }
+        try
+        {
+            dontShowHelium = Boolean.valueOf (split[29]);
+        }
+        catch (ArrayIndexOutOfBoundsException ex)
+        {
+        }
 
         // find the current theme and select it
         for (int i = 0; i < viewPanel.domain.utility.themes.size (); ++i)
@@ -422,6 +433,7 @@ public class Preferences
         language = "English";
         defaultPriorityColors ();
         defaultDueDateColors ();
+        dontShowHelium = false;
     }
 
     /**
@@ -486,6 +498,7 @@ public class Preferences
                + dueDateColors[5].getRed () + "-" + dueDateColors[5].getGreen () + "-" + dueDateColors[5].getBlue () + SEPARATOR
                + currentTheme + SEPARATOR
                + language + SEPARATOR
-               + dueDateColors[6].getRed () + "-" + dueDateColors[6].getGreen () + "-" + dueDateColors[6].getBlue ();
+               + dueDateColors[6].getRed () + "-" + dueDateColors[6].getGreen () + "-" + dueDateColors[6].getBlue () + SEPARATOR
+               + dontShowHelium;
     }
 }

@@ -55,9 +55,10 @@ public class AboutDialog extends EscapeDialog
         setTitle (viewPanel.domain.language.getString ("about"));
         aboutJPanel.setBackground (viewPanel.domain.utility.currentTheme.colorSingleWindowBackground1);
         aboutCloseButton.setFont (viewPanel.domain.utility.currentTheme.fontPlain12);
+        hyperlinkLabel1.setFont (viewPanel.domain.utility.currentTheme.fontPlain12);
         aboutCloseButton.setBackground (viewPanel.domain.utility.currentTheme.colorButtonBackground);
         dedicatedLabel.setFont (viewPanel.domain.utility.currentTheme.fontPlain11);
-        hyperlinkLabel1.setFont (viewPanel.domain.utility.currentTheme.fontPlain12);
+        hyperlinkLabel2.setFont (viewPanel.domain.utility.currentTheme.fontPlain12);
         aboutLicense.setFont (viewPanel.domain.utility.currentTheme.fontPlain12);
         versionLabel.setFont (viewPanel.domain.utility.currentTheme.fontPlain12);
     }
@@ -80,6 +81,7 @@ public class AboutDialog extends EscapeDialog
         aboutLicense = new javax.swing.JLabel();
         aboutLabel = new javax.swing.JLabel();
         versionLabel = new javax.swing.JLabel();
+        hyperlinkLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -104,6 +106,10 @@ public class AboutDialog extends EscapeDialog
         hyperlinkLabel1.setText("<html><a href=\"http://alexlaird.com/projects/get-organized\">alexlaird.com/projects/get-organized</a></html>");
         hyperlinkLabel1.addMouseListener(new java.awt.event.MouseAdapter()
         {
+            public void mouseReleased(java.awt.event.MouseEvent evt)
+            {
+                hyperlinkLabel1MouseReleased(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt)
             {
                 hyperlinkLabel1aboutPanelMouseEntered(evt);
@@ -111,10 +117,6 @@ public class AboutDialog extends EscapeDialog
             public void mouseExited(java.awt.event.MouseEvent evt)
             {
                 hyperlinkLabel1aboutPanelMouseExited(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt)
-            {
-                hyperlinkLabel1MouseReleased(evt);
             }
         });
 
@@ -125,6 +127,25 @@ public class AboutDialog extends EscapeDialog
         aboutLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/logo.png"))); // NOI18N
 
         versionLabel.setText("<html><b>" + viewPanel.domain.language.getString ("version") + ":</b> " + Domain.VERSION + "</html>");
+
+        hyperlinkLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        hyperlinkLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/helium.png"))); // NOI18N
+        hyperlinkLabel2.setText("<html><a href=\"http://www.heliumedu.com\">Get Organized has been replaced with Helium. Switch today!</a></html>");
+        hyperlinkLabel2.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseReleased(java.awt.event.MouseEvent evt)
+            {
+                hyperlinkLabel2MouseReleased(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                hyperlinkLabel2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                hyperlinkLabel2MouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout aboutJPanelLayout = new javax.swing.GroupLayout(aboutJPanel);
         aboutJPanel.setLayout(aboutJPanelLayout);
@@ -145,10 +166,14 @@ public class AboutDialog extends EscapeDialog
                             .addComponent(closeButtonPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, aboutJPanelLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addGroup(aboutJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(hyperlinkLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(versionLabel, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGroup(aboutJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(aboutJPanelLayout.createSequentialGroup()
+                                .addComponent(versionLabel)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(aboutJPanelLayout.createSequentialGroup()
+                                .addComponent(hyperlinkLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(hyperlinkLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         aboutJPanelLayout.setVerticalGroup(
@@ -160,9 +185,11 @@ public class AboutDialog extends EscapeDialog
                 .addComponent(versionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(aboutLicense, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(hyperlinkLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(13, 13, 13)
+                .addGroup(aboutJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(hyperlinkLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(hyperlinkLabel1))
+                .addGap(13, 13, 13)
                 .addComponent(dedicatedLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(closeButtonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -177,7 +204,7 @@ public class AboutDialog extends EscapeDialog
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(aboutJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(aboutJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 461, Short.MAX_VALUE)
         );
 
         pack();
@@ -217,6 +244,35 @@ public class AboutDialog extends EscapeDialog
     {//GEN-HEADEREND:event_hyperlinkLabel1aboutPanelMouseEntered
         setCursor (Cursor.getPredefinedCursor (Cursor.HAND_CURSOR));
 }//GEN-LAST:event_hyperlinkLabel1aboutPanelMouseEntered
+
+    private void hyperlinkLabel2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hyperlinkLabel2MouseReleased
+        if (Domain.desktop != null)
+        {
+            try
+            {
+                Domain.desktop.browse (new URI ("http://www.heliumedu.com"));
+            }
+            catch (IOException ex)
+            {
+                Domain.LOGGER.add (ex);
+            }
+            catch (URISyntaxException ex)
+            {
+                Domain.LOGGER.add (ex);
+            }
+        }
+    }//GEN-LAST:event_hyperlinkLabel2MouseReleased
+
+    private void hyperlinkLabel2MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_hyperlinkLabel2MouseEntered
+    {//GEN-HEADEREND:event_hyperlinkLabel2MouseEntered
+        setCursor (Cursor.getPredefinedCursor (Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_hyperlinkLabel2MouseEntered
+
+    private void hyperlinkLabel2MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_hyperlinkLabel2MouseExited
+    {//GEN-HEADEREND:event_hyperlinkLabel2MouseExited
+        setCursor (Cursor.getDefaultCursor());
+    }//GEN-LAST:event_hyperlinkLabel2MouseExited
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aboutCloseButton;
     protected adl.go.gui.ColoredJPanel aboutJPanel;
@@ -225,6 +281,7 @@ public class AboutDialog extends EscapeDialog
     private javax.swing.JPanel closeButtonPanel;
     private javax.swing.JLabel dedicatedLabel;
     private javax.swing.JLabel hyperlinkLabel1;
+    private javax.swing.JLabel hyperlinkLabel2;
     private javax.swing.JLabel versionLabel;
     // End of variables declaration//GEN-END:variables
 

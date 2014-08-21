@@ -22,6 +22,10 @@ package adl.go.gui;
 
 import adl.go.gui.ColoredComponent.GradientStyle;
 import java.awt.Color;
+import java.awt.Cursor;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ResourceBundle;
 
 /**
@@ -51,6 +55,7 @@ public class GettingStartedDialog extends EscapeDialog
         setTitle (viewPanel.domain.language.getString ("gettingStarted"));
         gettingStartedJPanel.setBackground (viewPanel.domain.utility.currentTheme.colorSingleWindowBackground1);
         welcomeLabel.setFont (viewPanel.domain.utility.currentTheme.fontBold14);
+        hyperlinkLabel1.setFont (viewPanel.domain.utility.currentTheme.fontPlain12);
         aTACFirstLabel.setFont (viewPanel.domain.utility.currentTheme.fontPlain12);
         addingTermsAndCoursesLabel.setFont (viewPanel.domain.utility.currentTheme.fontBold14);
         wFirstLabel.setFont (viewPanel.domain.utility.currentTheme.fontPlain12);
@@ -84,7 +89,8 @@ public class GettingStartedDialog extends EscapeDialog
      */
     @SuppressWarnings ("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         gettingStartedJPanel = new adl.go.gui.ColoredJPanel(GradientStyle.VERTICAL_GRADIENT_DOWN, Color.WHITE);
         jSeparator8 = new javax.swing.JSeparator();
@@ -138,15 +144,16 @@ public class GettingStartedDialog extends EscapeDialog
         nextGettingStartedButton = new javax.swing.JButton();
         prevGettingStartedButton = new javax.swing.JButton();
         dontShowCheckBox = new javax.swing.JCheckBox();
+        hyperlinkLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         gettingStartedJPanel.setPreferredSize(new java.awt.Dimension(562, 523));
 
-        getOrganizedLabel.setFont(new java.awt.Font("Verdana", 1, 16));
+        getOrganizedLabel.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         getOrganizedLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getOrganizedLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource(Domain.IMAGES_FOLDER + "logo.png"))); // NOI18N
+        getOrganizedLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/logo.png"))); // NOI18N
 
         gettingStartedPanel.setOpaque(false);
         gettingStartedPanel.setPreferredSize(new java.awt.Dimension(559, 0));
@@ -173,11 +180,11 @@ public class GettingStartedDialog extends EscapeDialog
         firstCard.add(wFirstLabel);
         wFirstLabel.setBounds(20, 26, 520, 110);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource(Domain.IMAGES_FOLDER + "add_term_2.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/add_term_2.png"))); // NOI18N
         firstCard.add(jLabel4);
         jLabel4.setBounds(340, 230, 200, 110);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(Domain.IMAGES_FOLDER + "add_term_1.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/add_term_1.png"))); // NOI18N
         firstCard.add(jLabel1);
         jLabel1.setBounds(270, 120, 150, 180);
 
@@ -205,15 +212,15 @@ public class GettingStartedDialog extends EscapeDialog
         secondCard.add(aTACCFirstLabel);
         aTACCFirstLabel.setBounds(10, 25, 330, 140);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource(Domain.IMAGES_FOLDER + "add_course_1.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/add_course_1.png"))); // NOI18N
         secondCard.add(jLabel5);
         jLabel5.setBounds(350, 10, 192, 160);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource(Domain.IMAGES_FOLDER + "add_course_2.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/add_course_2.png"))); // NOI18N
         secondCard.add(jLabel6);
         jLabel6.setBounds(10, 160, 170, 170);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource(Domain.IMAGES_FOLDER + "weight_1.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/weight_1.png"))); // NOI18N
         secondCard.add(jLabel7);
         jLabel7.setBounds(170, 200, 140, 131);
 
@@ -231,15 +238,15 @@ public class GettingStartedDialog extends EscapeDialog
         thirdCard.add(gSATCFirstLabel);
         gSATCFirstLabel.setBounds(20, 30, 280, 300);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource(Domain.IMAGES_FOLDER + "weight_2.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/weight_2.png"))); // NOI18N
         thirdCard.add(jLabel8);
         jLabel8.setBounds(330, 0, 150, 100);
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource(Domain.IMAGES_FOLDER + "weight_3.png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/weight_3.png"))); // NOI18N
         thirdCard.add(jLabel9);
         jLabel9.setBounds(325, 80, 194, 180);
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource(Domain.IMAGES_FOLDER + "grading.png"))); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/grading.png"))); // NOI18N
         thirdCard.add(jLabel16);
         jLabel16.setBounds(310, 250, 230, 80);
 
@@ -258,17 +265,17 @@ public class GettingStartedDialog extends EscapeDialog
         fourthCard.add(aEFirstLabel);
         aEFirstLabel.setBounds(261, 26, 290, 310);
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource(Domain.IMAGES_FOLDER + "add_assignment.png"))); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/add_assignment.png"))); // NOI18N
         fourthCard.add(jLabel10);
         jLabel10.setBounds(10, 120, 130, 150);
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource(Domain.IMAGES_FOLDER + "clone_event.png"))); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/clone_event.png"))); // NOI18N
         jLabel17.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         fourthCard.add(jLabel17);
         jLabel17.setBounds(100, 220, 164, 111);
 
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource(Domain.IMAGES_FOLDER + "assignment_details.png"))); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/assignment_details.png"))); // NOI18N
         jLabel12.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         fourthCard.add(jLabel12);
         jLabel12.setBounds(40, 10, 220, 166);
@@ -287,16 +294,16 @@ public class GettingStartedDialog extends EscapeDialog
         fifthCard.add(vFFirstLabel);
         vFFirstLabel.setBounds(20, 26, 330, 320);
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource(Domain.IMAGES_FOLDER + "list_calendar_view.png"))); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/list_calendar_view.png"))); // NOI18N
         fifthCard.add(jLabel13);
         jLabel13.setBounds(350, 20, 200, 80);
 
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource(Domain.IMAGES_FOLDER + "filters.png"))); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/filters.png"))); // NOI18N
         fifthCard.add(jLabel14);
         jLabel14.setBounds(330, 130, 220, 50);
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource(Domain.IMAGES_FOLDER + "mini_calendar.png"))); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/mini_calendar.png"))); // NOI18N
         fifthCard.add(jLabel15);
         jLabel15.setBounds(360, 180, 190, 150);
 
@@ -315,11 +322,11 @@ public class GettingStartedDialog extends EscapeDialog
         sixthCard.add(sFirstLabel);
         sFirstLabel.setBounds(250, 30, 290, 300);
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource(Domain.IMAGES_FOLDER + "sorting2.png"))); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/sorting2.png"))); // NOI18N
         sixthCard.add(jLabel11);
         jLabel11.setBounds(10, 190, 220, 130);
 
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource(Domain.IMAGES_FOLDER + "sorting.png"))); // NOI18N
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/sorting.png"))); // NOI18N
         sixthCard.add(jLabel18);
         jLabel18.setBounds(30, 20, 200, 160);
 
@@ -337,11 +344,11 @@ public class GettingStartedDialog extends EscapeDialog
         seventhCard.add(gFirstLabel);
         gFirstLabel.setBounds(20, 30, 310, 300);
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource(Domain.IMAGES_FOLDER + "grades2.png"))); // NOI18N
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/grades2.png"))); // NOI18N
         seventhCard.add(jLabel19);
         jLabel19.setBounds(350, 20, 190, 180);
 
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource(Domain.IMAGES_FOLDER + "grades1.png"))); // NOI18N
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/grades1.png"))); // NOI18N
         seventhCard.add(jLabel20);
         jLabel20.setBounds(329, 190, 221, 110);
 
@@ -351,16 +358,20 @@ public class GettingStartedDialog extends EscapeDialog
 
         closeGettingStartedButton.setText(viewPanel.domain.language.getString ("close"));
         closeGettingStartedButton.setToolTipText(viewPanel.domain.language.getString ("closeToolTip"));
-        closeGettingStartedButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        closeGettingStartedButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 closeGettingStartedButtonActionPerformed(evt);
             }
         });
 
         nextGettingStartedButton.setText(viewPanel.domain.language.getString ("next"));
         nextGettingStartedButton.setToolTipText(viewPanel.domain.language.getString ("nextGettingStartedToolTip"));
-        nextGettingStartedButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        nextGettingStartedButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 nextGettingStartedButtonActionPerformed(evt);
             }
         });
@@ -368,17 +379,40 @@ public class GettingStartedDialog extends EscapeDialog
         prevGettingStartedButton.setText(viewPanel.domain.language.getString ("previous"));
         prevGettingStartedButton.setToolTipText(viewPanel.domain.language.getString ("previousGettingStartedToolTip"));
         prevGettingStartedButton.setEnabled(false);
-        prevGettingStartedButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        prevGettingStartedButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 prevGettingStartedButtonActionPerformed(evt);
             }
         });
 
         dontShowCheckBox.setText(viewPanel.domain.language.getString ("dontShowOnStartup"));
         dontShowCheckBox.setOpaque(false);
-        dontShowCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        dontShowCheckBox.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 dontShowCheckBoxActionPerformed(evt);
+            }
+        });
+
+        hyperlinkLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        hyperlinkLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/helium.png"))); // NOI18N
+        hyperlinkLabel1.setText("<html><a href=\"http://www.heliumedu.com\">Get Organized has been replaced with Helium. Switch today!</a></html>");
+        hyperlinkLabel1.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseReleased(java.awt.event.MouseEvent evt)
+            {
+                hyperlinkLabel1MouseReleased(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                hyperlinkLabel1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                hyperlinkLabel1MouseExited(evt);
             }
         });
 
@@ -391,19 +425,26 @@ public class GettingStartedDialog extends EscapeDialog
                 .addGroup(aboutPanelLowerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(aboutPanelLowerPanelLayout.createSequentialGroup()
                         .addComponent(dontShowCheckBox)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(prevGettingStartedButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(nextGettingStartedButton))
-                    .addComponent(closeGettingStartedButton, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addGroup(aboutPanelLowerPanelLayout.createSequentialGroup()
+                        .addComponent(hyperlinkLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(closeGettingStartedButton)))
                 .addContainerGap())
         );
         aboutPanelLowerPanelLayout.setVerticalGroup(
             aboutPanelLowerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, aboutPanelLowerPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(closeGettingStartedButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGroup(aboutPanelLowerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(aboutPanelLowerPanelLayout.createSequentialGroup()
+                        .addComponent(closeGettingStartedButton)
+                        .addGap(0, 39, Short.MAX_VALUE))
+                    .addComponent(hyperlinkLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(aboutPanelLowerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nextGettingStartedButton)
                     .addComponent(prevGettingStartedButton)
@@ -418,7 +459,7 @@ public class GettingStartedDialog extends EscapeDialog
             .addGroup(gettingStartedJPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(gettingStartedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE)
+                    .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(gettingStartedPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, gettingStartedJPanelLayout.createSequentialGroup()
                         .addComponent(getOrganizedLabel)
@@ -432,7 +473,7 @@ public class GettingStartedDialog extends EscapeDialog
                 .addContainerGap()
                 .addGroup(gettingStartedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(aboutPanelLowerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(getOrganizedLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(getOrganizedLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -444,11 +485,11 @@ public class GettingStartedDialog extends EscapeDialog
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(gettingStartedJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
+            .addComponent(gettingStartedJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(gettingStartedJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
+            .addComponent(gettingStartedJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)
         );
 
         pack();
@@ -537,6 +578,36 @@ public class GettingStartedDialog extends EscapeDialog
         viewPanel.domain.utility.preferences.dontShowGettingStarted = dontShowCheckBox.isSelected ();
         viewPanel.domain.needsPreferencesSave = true;
 }//GEN-LAST:event_dontShowCheckBoxActionPerformed
+
+    private void hyperlinkLabel1MouseReleased(java.awt.event.MouseEvent evt)//GEN-FIRST:event_hyperlinkLabel1MouseReleased
+    {//GEN-HEADEREND:event_hyperlinkLabel1MouseReleased
+        if (Domain.desktop != null)
+        {
+            try
+            {
+                Domain.desktop.browse (new URI ("http://www.heliumedu.com"));
+            }
+            catch (IOException ex)
+            {
+                Domain.LOGGER.add (ex);
+            }
+            catch (URISyntaxException ex)
+            {
+                Domain.LOGGER.add (ex);
+            }
+        }
+    }//GEN-LAST:event_hyperlinkLabel1MouseReleased
+
+    private void hyperlinkLabel1MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_hyperlinkLabel1MouseEntered
+    {//GEN-HEADEREND:event_hyperlinkLabel1MouseEntered
+        setCursor (Cursor.getPredefinedCursor (Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_hyperlinkLabel1MouseEntered
+
+    private void hyperlinkLabel1MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_hyperlinkLabel1MouseExited
+    {//GEN-HEADEREND:event_hyperlinkLabel1MouseExited
+        setCursor (Cursor.getDefaultCursor());
+    }//GEN-LAST:event_hyperlinkLabel1MouseExited
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel aEFirstLabel;
     private javax.swing.JLabel aTACCFirstLabel;
@@ -559,6 +630,7 @@ public class GettingStartedDialog extends EscapeDialog
     private javax.swing.JLabel gradesGettingStartedLabel;
     private javax.swing.JLabel gradingScaleAndTextbooksContLabel;
     private javax.swing.JLabel gradingScaleAndTextbooksLabel;
+    private javax.swing.JLabel hyperlinkLabel1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

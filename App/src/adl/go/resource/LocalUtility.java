@@ -1101,6 +1101,14 @@ public class LocalUtility extends Utility
                 {
                     domain.needsPreferencesSave = true;
                 }
+                try
+                {
+                    preferences.dontShowHelium = Boolean.valueOf (split[29]);
+                }
+                catch (ArrayIndexOutOfBoundsException innerEx)
+                {
+                    domain.needsPreferencesSave = true;
+                }
             }
 
             // find the current theme and select it

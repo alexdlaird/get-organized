@@ -258,6 +258,7 @@ public class MainFrame extends JFrame
         helpMenuItem = new javax.swing.JMenuItem();
         donateMenuItem = new javax.swing.JMenuItem();
         gettingStartedMenuItem = new javax.swing.JMenuItem();
+        heliumMenuItem = new javax.swing.JMenuItem();
         helpMenuSeparator1 = new javax.swing.JPopupMenu.Separator();
         checkForUpdatesMenuItem = new javax.swing.JMenuItem();
         contactDeveloperMenuItem = new javax.swing.JMenuItem();
@@ -272,10 +273,10 @@ public class MainFrame extends JFrame
         fileMenu.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         fileMenu.addMenuListener(new javax.swing.event.MenuListener()
         {
-            public void menuCanceled(javax.swing.event.MenuEvent evt)
+            public void menuDeselected(javax.swing.event.MenuEvent evt)
             {
             }
-            public void menuDeselected(javax.swing.event.MenuEvent evt)
+            public void menuCanceled(javax.swing.event.MenuEvent evt)
             {
             }
             public void menuSelected(javax.swing.event.MenuEvent evt)
@@ -353,10 +354,10 @@ public class MainFrame extends JFrame
         termMenu.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         termMenu.addMenuListener(new javax.swing.event.MenuListener()
         {
-            public void menuCanceled(javax.swing.event.MenuEvent evt)
+            public void menuDeselected(javax.swing.event.MenuEvent evt)
             {
             }
-            public void menuDeselected(javax.swing.event.MenuEvent evt)
+            public void menuCanceled(javax.swing.event.MenuEvent evt)
             {
             }
             public void menuSelected(javax.swing.event.MenuEvent evt)
@@ -406,10 +407,10 @@ public class MainFrame extends JFrame
         courseMenu.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         courseMenu.addMenuListener(new javax.swing.event.MenuListener()
         {
-            public void menuCanceled(javax.swing.event.MenuEvent evt)
+            public void menuDeselected(javax.swing.event.MenuEvent evt)
             {
             }
-            public void menuDeselected(javax.swing.event.MenuEvent evt)
+            public void menuCanceled(javax.swing.event.MenuEvent evt)
             {
             }
             public void menuSelected(javax.swing.event.MenuEvent evt)
@@ -525,10 +526,10 @@ public class MainFrame extends JFrame
         assignmentMenu.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         assignmentMenu.addMenuListener(new javax.swing.event.MenuListener()
         {
-            public void menuCanceled(javax.swing.event.MenuEvent evt)
+            public void menuDeselected(javax.swing.event.MenuEvent evt)
             {
             }
-            public void menuDeselected(javax.swing.event.MenuEvent evt)
+            public void menuCanceled(javax.swing.event.MenuEvent evt)
             {
             }
             public void menuSelected(javax.swing.event.MenuEvent evt)
@@ -580,10 +581,10 @@ public class MainFrame extends JFrame
         eventMenu.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         eventMenu.addMenuListener(new javax.swing.event.MenuListener()
         {
-            public void menuCanceled(javax.swing.event.MenuEvent evt)
+            public void menuDeselected(javax.swing.event.MenuEvent evt)
             {
             }
-            public void menuDeselected(javax.swing.event.MenuEvent evt)
+            public void menuCanceled(javax.swing.event.MenuEvent evt)
             {
             }
             public void menuSelected(javax.swing.event.MenuEvent evt)
@@ -647,10 +648,10 @@ public class MainFrame extends JFrame
         toolsMenu.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         toolsMenu.addMenuListener(new javax.swing.event.MenuListener()
         {
-            public void menuCanceled(javax.swing.event.MenuEvent evt)
+            public void menuDeselected(javax.swing.event.MenuEvent evt)
             {
             }
-            public void menuDeselected(javax.swing.event.MenuEvent evt)
+            public void menuCanceled(javax.swing.event.MenuEvent evt)
             {
             }
             public void menuSelected(javax.swing.event.MenuEvent evt)
@@ -702,10 +703,10 @@ public class MainFrame extends JFrame
         helpMenu.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         helpMenu.addMenuListener(new javax.swing.event.MenuListener()
         {
-            public void menuCanceled(javax.swing.event.MenuEvent evt)
+            public void menuDeselected(javax.swing.event.MenuEvent evt)
             {
             }
-            public void menuDeselected(javax.swing.event.MenuEvent evt)
+            public void menuCanceled(javax.swing.event.MenuEvent evt)
             {
             }
             public void menuSelected(javax.swing.event.MenuEvent evt)
@@ -748,6 +749,17 @@ public class MainFrame extends JFrame
             }
         });
         helpMenu.add(gettingStartedMenuItem);
+
+        heliumMenuItem.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        heliumMenuItem.setText("Switch to Helium!");
+        heliumMenuItem.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                heliumMenuItemActionPerformed(evt);
+            }
+        });
+        helpMenu.add(heliumMenuItem);
         helpMenu.add(helpMenuSeparator1);
 
         checkForUpdatesMenuItem.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
@@ -1164,6 +1176,10 @@ public class MainFrame extends JFrame
         viewPanel.goDonate ();
     }//GEN-LAST:event_donateMenuItemActionPerformed
 
+    private void heliumMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_heliumMenuItemActionPerformed
+        viewPanel.heliumDialog.goViewHelium ();
+    }//GEN-LAST:event_heliumMenuItemActionPerformed
+
     /**
      * Apply language settings to the menu bar.
      */
@@ -1345,6 +1361,7 @@ public class MainFrame extends JFrame
     private javax.swing.JPopupMenu.Separator fileSeparator2;
     private javax.swing.JPopupMenu.Separator fileSeparator3;
     private javax.swing.JMenuItem gettingStartedMenuItem;
+    private javax.swing.JMenuItem heliumMenuItem;
     protected javax.swing.JMenu helpMenu;
     private javax.swing.JMenuItem helpMenuItem;
     private javax.swing.JPopupMenu.Separator helpMenuSeparator1;

@@ -564,6 +564,10 @@ public class ViewPanel extends JPanel
      */
     protected GettingStartedDialog gettingStartedDialog = new GettingStartedDialog (this);
     /**
+     * A reference to the Helium dialog.
+     */
+    protected HeliumDialog heliumDialog = new HeliumDialog (this);
+    /**
      * A reference to the import from backup dialog.
      */
     protected ImportFromBackupDialog importFromBackupDialog = new ImportFromBackupDialog (this);
@@ -742,6 +746,7 @@ public class ViewPanel extends JPanel
 
         aboutDialog.init ();
         gettingStartedDialog.init ();
+        heliumDialog.init ();
         gradesDialog.init ();
         printDialog.init ();
         importFromBackupDialog.init ();
@@ -1247,6 +1252,7 @@ public class ViewPanel extends JPanel
             settingsDialog.setIconImage (new ImageIcon (getClass ().getResource (Domain.IMAGES_FOLDER + "settings_button.png")).getImage ());
             termsAndCoursesDialog.setIconImage (new ImageIcon (getClass ().getResource (Domain.IMAGES_FOLDER + "terms_courses_button.png")).getImage ());
             gettingStartedDialog.setIconImage (new ImageIcon (getClass ().getResource (Domain.IMAGES_FOLDER + "go.png")).getImage ());
+            heliumDialog.setIconImage (new ImageIcon (getClass ().getResource (Domain.IMAGES_FOLDER + "helium.png")).getImage ());
             aboutDialog.setIconImage (new ImageIcon (getClass ().getResource (Domain.IMAGES_FOLDER + "go.png")).getImage ());
             updatesDialog.setIconImage (new ImageIcon (getClass ().getResource (Domain.IMAGES_FOLDER + "go.png")).getImage ());
             importFromBackupDialog.setIconImage (new ImageIcon (getClass ().getResource (Domain.IMAGES_FOLDER + "go.png")).getImage ());
@@ -1607,6 +1613,10 @@ public class ViewPanel extends JPanel
             if (!domain.utility.preferences.dontShowGettingStarted)
             {
                 gettingStartedDialog.showGettingStartedDialog ();
+            }
+            if (!domain.utility.preferences.dontShowHelium)
+            {
+                heliumDialog.goViewHelium ();
             }
         }
         catch (Exception ex)
@@ -6726,6 +6736,10 @@ public class ViewPanel extends JPanel
         {
             gettingStartedDialog.dispose ();
         }
+        if (heliumDialog.isVisible())
+        {
+            heliumDialog.dispose();
+        }
         if (gradesDialog.isVisible ())
         {
             gradesDialog.dispose ();
@@ -11337,6 +11351,7 @@ public class ViewPanel extends JPanel
         assignmentsTableModel.setSortAscending (domain.utility.preferences.sortAscending);
 
         gettingStartedDialog.dontShowCheckBox.setSelected (domain.utility.preferences.dontShowGettingStarted);
+        heliumDialog.dontShowCheckBox.setSelected(domain.utility.preferences.dontShowHelium);
 
         final ViewPanel viewPanel = this;
         new Thread (new Runnable ()
@@ -11466,6 +11481,7 @@ public class ViewPanel extends JPanel
         gradesDialog.setTitle (domain.language.getString ("grades"));
         gettingStartedDialog.setTitle (domain.language.getString ("gettingStarted"));
         updatesDialog.setTitle (domain.language.getString ("checkForUpdates"));
+        heliumDialog.setTitle("Switch to Helium!");
 
         // file chooser
         fileChooser.resetChoosableFileFilters ();
@@ -11477,6 +11493,7 @@ public class ViewPanel extends JPanel
         // dialog contents
         aboutDialog.applyLanguage (domain.language);
         gettingStartedDialog.applyLanguage (domain.language);
+        heliumDialog.applyLanguage(domain.language);
         importFromBackupDialog.applyLanguage (domain.language);
         printDialog.applyLanguage (domain.language);
         settingsDialog.applyLanguage (domain.language);
