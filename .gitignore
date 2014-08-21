@@ -1,0 +1,6 @@
+App/.idea/workspace.xml
+Updater/.idea/workspace.xml
+App/build/*
+Updater/build/*
+*.class
+*.jar
