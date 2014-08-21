@@ -3,8 +3,8 @@
 ##
 # Get Organized - Organize your schedule, course assignments, and grades
 # Copyright (c) 2012 Alex Laird
-# getorganized@alexlaird.name
-# alexlaird.name
+# getorganized@alexlaird.com
+# alexlaird.com
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -45,7 +45,7 @@ REL_STORE = ".." + os.sep + "store" + os.sep
 def server(verNum, getOrganizedDir, windowsPortable, jarPortable, windowsSetupFile, osxSetupFile, zipFile, releaseNotes, license):
     # Establish a connection to the FTP server
     print ("\nConnecting to Get Organized server...")
-    ftp = ftplib.FTP("ftp.alexlaird.name")
+    ftp = ftplib.FTP("ftp.alexlaird.com")
     print ("Connection established")
     username = raw_input("Username: ")
     password = getpass.getpass()
@@ -60,7 +60,7 @@ def server(verNum, getOrganizedDir, windowsPortable, jarPortable, windowsSetupFi
     
     if validCredentials:
         try:
-            ftp.cwd("/home/adlaird/domains/updates.alexlaird.name/public_html/get-organized")
+            ftp.cwd("/home/adlaird/domains/updates.alexlaird.com/public_html/get-organized")
             print ("Pulling down current version.txt")
             versionOut = open(getOrganizedDir + "version.txt", "wb")
             ftp.retrbinary("RETR version.txt", versionOut.write)

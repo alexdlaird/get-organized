@@ -1,8 +1,8 @@
 /*
  * Get Organized - Organize your schedule, course assignments, and grades
  * Copyright © 2012 Alex Laird
- * getorganized@alexlaird.name
- * alexlaird.name
+ * getorganized@alexlaird.com
+ * alexlaird.com
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -101,7 +101,7 @@ public class AboutDialog extends EscapeDialog
         dedicatedLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         hyperlinkLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/go.png"))); // NOI18N
-        hyperlinkLabel1.setText("<html><a href=\"http://alexlaird.name/projects/get-organized\">alexlaird.name/projects/get-organized</a></html>");
+        hyperlinkLabel1.setText("<html><a href=\"http://alexlaird.com/projects/get-organized\">alexlaird.com/projects/get-organized</a></html>");
         hyperlinkLabel1.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseEntered(java.awt.event.MouseEvent evt)
@@ -195,7 +195,7 @@ public class AboutDialog extends EscapeDialog
         {
             try
             {
-                Domain.desktop.browse (new URI ("http://alexlaird.name/projects/get-organized"));
+                Domain.desktop.browse (new URI ("http://alexlaird.com/projects/get-organized"));
             }
             catch (IOException ex)
             {

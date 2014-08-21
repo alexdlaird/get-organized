@@ -1,10 +1,10 @@
 [Setup]
 AppName=Get Organized
 AppMutex=getorganized,Global\getorganized
-AppUpdatesURL=http://alexlaird.name/projects/get-organized
+AppUpdatesURL=http://alexlaird.com/projects/get-organized
 AppCopyright=Copyright (c) 2010-2012 Alex Laird.
 AppContact=Alex Laird
-AppSupportURL=http://alexlaird.name/projects/get-organized/support
+AppSupportURL=http://alexlaird.com/projects/get-organized/support
 AppVersion=1.08
 AppVerName=Get Organized 1.08
 AppReadmeFile={app}\releasenotes.html
@@ -45,7 +45,7 @@ Name: {commondesktop}\Get Organized; Filename: {app}\Get Organized.exe; IconFile
 
 [Run]
 Filename: {app}\Get Organized.exe; Description: Launch Get Organized; Flags: postinstall nowait skipifsilent
-Filename: "http://alexlaird.name/projects/get-organized/donate"; Description: Donate to Get Organized; Flags: postinstall shellexec skipifsilent runasoriginaluser
+Filename: "http://alexlaird.com/projects/get-organized/donate"; Description: Donate to Get Organized; Flags: postinstall shellexec skipifsilent runasoriginaluser
 Filename: {app}\releasenotes.html; Description: View the Release Notes; Flags: postinstall shellexec skipifsilent unchecked
 
 [Code]

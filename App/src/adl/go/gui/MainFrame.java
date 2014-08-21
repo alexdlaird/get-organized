@@ -1,8 +1,8 @@
 /*
  * Get Organized - Organize your schedule, course assignments, and grades
  * Copyright © 2012 Alex Laird
- * getorganized@alexlaird.name
- * alexlaird.name
+ * getorganized@alexlaird.com
+ * alexlaird.com
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1037,7 +1037,7 @@ public class MainFrame extends JFrame
         {
             try
             {
-                Domain.desktop.browse (new URI ("http://alexlaird.name/projects/get-organized/get-organized-contact/"));
+                Domain.desktop.browse (new URI ("http://alexlaird.com/projects/get-organized/get-organized-contact/"));
             }
             catch (Exception ex)
             {
@@ -1048,7 +1048,7 @@ public class MainFrame extends JFrame
         {
             try
             {
-                Domain.desktop.mail (new URI ("mailto", "getorganized@alexlaird.name?subject=" + Domain.NAME + " " + Domain.VERSION, null));
+                Domain.desktop.mail (new URI ("mailto", "getorganized@alexlaird.com?subject=" + Domain.NAME + " " + Domain.VERSION, null));
             }
             catch (URISyntaxException ex)
             {

@@ -1,8 +1,8 @@
 /*
  * Get Organized - Organize your schedule, course assignments, and grades
  * Copyright © 2012 Alex Laird
- * getorganized@alexlaird.name
- * alexlaird.name
+ * getorganized@alexlaird.com
+ * alexlaird.com
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -209,7 +209,7 @@ public class GetOrganizedUpdater extends JFrame
                     double size = -1;
                     try
                     {
-                        URL url = new URL("http://updates.alexlaird.name/get-organized/version.txt");
+                        URL url = new URL("http://updates.alexlaird.com/get-organized/version.txt");
                         URLConnection conn = url.openConnection();
                         BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                         // throw away the version number line
@@ -290,35 +290,35 @@ public class GetOrganizedUpdater extends JFrame
                         licenseFile = new File(formattedPath, "../license.html");
                         if (fileName.endsWith(".exe"))
                         {
-                            URL url = new URL("http://updates.alexlaird.name/get-organized/GetOrganizedPortable.exe");
+                            URL url = new URL("http://updates.alexlaird.com/get-organized/GetOrganizedPortable.exe");
                             url.openConnection();
                             in = url.openStream();
                         }
                         else
                         {
-                            URL url = new URL("http://updates.alexlaird.name/get-organized/GetOrganizedPortable.jar");
+                            URL url = new URL("http://updates.alexlaird.com/get-organized/GetOrganizedPortable.jar");
                             url.openConnection();
                             in = url.openStream();
                         }
                         
-                        URL url = new URL("http://updates.alexlaird.name/get-organized/releasenotes.html");
+                        URL url = new URL("http://updates.alexlaird.com/get-organized/releasenotes.html");
                         url.openConnection();
                         releaseNotesIn = url.openStream();
-                        url = new URL("http://updates.alexlaird.name/get-organized/license.html");
+                        url = new URL("http://updates.alexlaird.com/get-organized/license.html");
                         url.openConnection();
                         licenseIn = url.openStream();
                     }
                     else if (OS_NAME.toLowerCase().contains("windows"))
                     {
                         updateFile = new File(formattedPath, "GetOrganizedSetup.exe");
-                        URL url = new URL("http://updates.alexlaird.name/get-organized/GetOrganizedSetup.exe");
+                        URL url = new URL("http://updates.alexlaird.com/get-organized/GetOrganizedSetup.exe");
                         url.openConnection();
                         in = url.openStream();
                     }
                     else if (OS_NAME.toLowerCase().contains("mac"))
                     {
                         updateFile = new File(formattedPath, "GetOrganizedSetup.pkg.zip");
-                        URL url = new URL("http://updates.alexlaird.name/get-organized/GetOrganizedSetup.pkg.zip");
+                        URL url = new URL("http://updates.alexlaird.com/get-organized/GetOrganizedSetup.pkg.zip");
                         url.openConnection();
                         in = url.openStream();
                     }
@@ -501,7 +501,7 @@ public class GetOrganizedUpdater extends JFrame
                                                        + "and use it to overwrite the existing application at\n"
                                                        + file.getCanonicalPath() + "\n"
                                                        + "More simply, the update can be installed automatically\n"
-                                                       + "from* alexlaird.name.");
+                                                       + "from* alexlaird.com.");
                                 OPTION_PANE.setMessageType(JOptionPane.ERROR_MESSAGE);
                                 JDialog optionDialog = OPTION_PANE.createDialog(frame, "Unable to Update Automatically");
                                 optionDialog.setVisible(true);
@@ -577,7 +577,7 @@ public class GetOrganizedUpdater extends JFrame
                         OPTION_PANE.setOptions(OK_CHOICE);
                         OPTION_PANE.setMessage("The update cannot be downloaded automatically for this\n"
                                                + "system. Please download the update manually from\n"
-                                               + "alexlaird.name.");
+                                               + "alexlaird.com.");
                         OPTION_PANE.setMessageType(JOptionPane.ERROR_MESSAGE);
                         JDialog optionDialog = OPTION_PANE.createDialog(frame, "Unable to Update Automatically");
                         optionDialog.setVisible(true);
@@ -585,7 +585,7 @@ public class GetOrganizedUpdater extends JFrame
                         {
                             try
                             {
-                                desktop.browse(new URI("http://alexlaird.name"));
+                                desktop.browse(new URI("http://alexlaird.com"));
                             }
                             catch (Exception ex)
                             {
@@ -600,7 +600,7 @@ public class GetOrganizedUpdater extends JFrame
                     updatesProgressBar.setIndeterminate(false);
                     OPTION_PANE.setOptions(OK_CHOICE);
                     OPTION_PANE.setMessage("An unknown error has occured. Try updating the application manually\n"
-                                           + "by going to* alexlaird.name.");
+                                           + "by going to* alexlaird.com.");
                     OPTION_PANE.setMessageType(JOptionPane.ERROR_MESSAGE);
                     JDialog optionDialog = OPTION_PANE.createDialog(frame, "Unable to Update Automatically");
                     optionDialog.setVisible(true);
@@ -608,7 +608,7 @@ public class GetOrganizedUpdater extends JFrame
                     {
                         try
                         {
-                            desktop.browse(new URI("http://alexlaird.name"));
+                            desktop.browse(new URI("http://alexlaird.com"));
                         }
                         catch (Exception innerEx)
                         {

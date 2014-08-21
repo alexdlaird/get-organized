@@ -3,8 +3,8 @@
 ##
 # Get Organized - Organize your schedule, course assignments, and grades
 # Copyright (c) 2012 Alex Laird
-# getorganized@alexlaird.name
-# alexlaird.name
+# getorganized@alexlaird.com
+# alexlaird.com
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

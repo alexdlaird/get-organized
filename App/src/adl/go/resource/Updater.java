@@ -1,8 +1,8 @@
 /*
  * Get Organized - Organize your schedule, course assignments, and grades
  * Copyright © 2012 Alex Laird
- * getorganized@alexlaird.name
- * alexlaird.name
+ * getorganized@alexlaird.com
+ * alexlaird.com
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -57,7 +57,7 @@ public class Updater
         try
         {
             // establish a connection with the update server
-            URL url = new URL ("http://updates.alexlaird.name/get-organized/version.txt");
+            URL url = new URL ("http://updates.alexlaird.com/get-organized/version.txt");
             URLConnection conn = url.openConnection ();
             BufferedReader in = new BufferedReader (new InputStreamReader (conn.getInputStream ()));
             // grab the server version information
@@ -184,7 +184,7 @@ public class Updater
     {
         try
         {
-            URL url = new URL ("http://updates.alexlaird.name/get-organized/Updater.jar");
+            URL url = new URL ("http://updates.alexlaird.com/get-organized/Updater.jar");
             url.openConnection ();
             InputStream out = url.openStream ();
 

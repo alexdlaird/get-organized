@@ -132,7 +132,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/adl/go/images/go.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;a href=&quot;http://alexlaird.name/projects/get-organized&quot;&gt;alexlaird.name/projects/get-organized&lt;/a&gt;&lt;/html&gt;"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;a href=&quot;http://alexlaird.com/projects/get-organized&quot;&gt;alexlaird.com/projects/get-organized&lt;/a&gt;&lt;/html&gt;"/>
           </Properties>
           <Events>
             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="hyperlinkLabel1aboutPanelMouseEntered"/>
