@@ -1,7 +1,10 @@
 App/.idea/workspace.xml
 Updater/.idea/workspace.xml
-App/build/*
-Updater/build/*
+App/nbproject/private/
+Updater/nbproject/private/
+JCalendar_GO/nbproject/private/
+App/build/
+Updater/build/
 *.class
 *.jar
 /JCalendar_GO/build/
