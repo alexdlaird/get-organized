@@ -56,7 +56,9 @@ public class HeliumDialog extends EscapeDialog
         heliumJPanel.setBackground (viewPanel.domain.utility.currentTheme.colorSingleWindowBackground1);
         heliumCloseButton.setFont (viewPanel.domain.utility.currentTheme.fontPlain12);
         heliumCloseButton.setBackground (viewPanel.domain.utility.currentTheme.colorButtonBackground);
+        heliumIntroLabel1.setFont (viewPanel.domain.utility.currentTheme.fontBold14);
         hyperlinkLabel1.setFont (viewPanel.domain.utility.currentTheme.fontPlain12);
+        jLabel1.setFont (viewPanel.domain.utility.currentTheme.fontPlain12);
         dontShowCheckBox.setFont (viewPanel.domain.utility.currentTheme.fontPlain12);
         heliumImg.setFont (viewPanel.domain.utility.currentTheme.fontPlain12);
         heliumIntroLabel.setFont (viewPanel.domain.utility.currentTheme.fontPlain12);
@@ -80,6 +82,9 @@ public class HeliumDialog extends EscapeDialog
         heliumImg = new javax.swing.JLabel();
         heliumLabel = new javax.swing.JLabel();
         heliumIntroLabel = new javax.swing.JLabel();
+        heliumImg1 = new javax.swing.JLabel();
+        heliumIntroLabel1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -116,23 +121,45 @@ public class HeliumDialog extends EscapeDialog
             {
                 hyperlinkLabel1MouseReleased(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt)
-            {
-                hyperlinkLabel1MouseEntered(evt);
-            }
             public void mouseExited(java.awt.event.MouseEvent evt)
             {
                 hyperlinkLabel1MouseExited(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                hyperlinkLabel1MouseEntered(evt);
+            }
         });
 
-        heliumImg.setText("This should be a screenshot ...");
+        heliumImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/helium_calendar.png"))); // NOI18N
 
         heliumLabel.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         heliumLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         heliumLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/helium_logo.png"))); // NOI18N
 
-        heliumIntroLabel.setText("<html>Guess what! Get Organized has been replaced with Helium, a modern web application that gives you all the functionality of Get Organized, and then some, on the go!</html>");
+        heliumIntroLabel.setText("<html>Get Organized has been rebuilt from the ground up as Helium, a new website. All the features you're used with Get Organized, a modern redesign, plus so much more!<br /><br />Past and present at-a-glance schedules are available anytime on any device. Create more flexible assignments and classes, retrieve a full workup of your grades at any time, get assignment notifications, request information from teachers, and so much more! Switch today!</html>");
+        heliumIntroLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        heliumImg1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adl/go/images/helium_grades.png"))); // NOI18N
+
+        heliumIntroLabel1.setText("<html>Get Organized? Nope, Now We're Helium!</html>");
+
+        jLabel1.setText("<html><a href=\"https://www.heliumedu.com\">www.heliumedu.com</a></html>");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                hyperlinkLabel1MouseReleased(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                hyperlinkLabel1MouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                hyperlinkLabel1MouseEntered(evt);
+            }
+        });
 
         javax.swing.GroupLayout heliumJPanelLayout = new javax.swing.GroupLayout(heliumJPanel);
         heliumJPanel.setLayout(heliumJPanelLayout);
@@ -141,11 +168,18 @@ public class HeliumDialog extends EscapeDialog
             .addGroup(heliumJPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(heliumJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(heliumIntroLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(heliumLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)
                     .addComponent(closeButtonPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)
-                    .addComponent(heliumImg, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)
-                    .addComponent(hyperlinkLabel1))
+                    .addComponent(hyperlinkLabel1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, heliumJPanelLayout.createSequentialGroup()
+                        .addGroup(heliumJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(heliumIntroLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(heliumIntroLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(heliumJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(heliumImg1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(heliumImg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         heliumJPanelLayout.setVerticalGroup(
@@ -154,14 +188,22 @@ public class HeliumDialog extends EscapeDialog
                 .addContainerGap()
                 .addComponent(heliumLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(heliumIntroLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(heliumImg, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(heliumJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(heliumJPanelLayout.createSequentialGroup()
+                        .addComponent(heliumImg, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(heliumImg1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(heliumJPanelLayout.createSequentialGroup()
+                        .addComponent(heliumIntroLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(heliumIntroLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(11, 11, 11)
                 .addComponent(hyperlinkLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(closeButtonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -190,7 +232,7 @@ public class HeliumDialog extends EscapeDialog
         {
             try
             {
-                Domain.desktop.browse (new URI ("http://www.heliumedu.com"));
+                Domain.desktop.browse (new URI ("https://www.heliumedu.com"));
             }
             catch (IOException ex)
             {
@@ -224,10 +266,13 @@ public class HeliumDialog extends EscapeDialog
     protected javax.swing.JCheckBox dontShowCheckBox;
     private javax.swing.JButton heliumCloseButton;
     private javax.swing.JLabel heliumImg;
+    private javax.swing.JLabel heliumImg1;
     private javax.swing.JLabel heliumIntroLabel;
+    private javax.swing.JLabel heliumIntroLabel1;
     protected adl.go.gui.ColoredJPanel heliumJPanel;
     private javax.swing.JLabel heliumLabel;
     private javax.swing.JLabel hyperlinkLabel1;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 
     /**
