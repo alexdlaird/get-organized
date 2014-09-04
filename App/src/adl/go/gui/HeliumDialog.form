@@ -53,7 +53,6 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="heliumIntroLabel" pref="0" max="32767" attributes="0"/>
                               <Component id="heliumIntroLabel1" alignment="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -61,6 +60,7 @@
                               <Component id="heliumImg" alignment="1" max="32767" attributes="2"/>
                           </Group>
                       </Group>
+                      <Component id="heliumIntroLabel2" alignment="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -74,23 +74,23 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="heliumImg" min="-2" pref="140" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="heliumImg1" min="-2" pref="140" max="-2" attributes="0"/>
+                          <Component id="heliumIntroLabel1" min="-2" pref="42" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="heliumIntroLabel" min="-2" pref="249" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="heliumIntroLabel1" min="-2" pref="45" max="-2" attributes="0"/>
+                          <Component id="heliumImg" min="-2" pref="139" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="heliumIntroLabel" min="-2" pref="230" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="heliumImg1" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="heliumIntroLabel2" min="-2" pref="44" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="hyperlinkLabel1" min="-2" pref="35" max="-2" attributes="1"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="closeButtonPanel" min="-2" pref="35" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -136,9 +136,9 @@
             <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;a href=&quot;http://www.heliumedu.com&quot;&gt;Get Organized has been replaced with Helium. Switch today!&lt;/a&gt;&lt;/html&gt;"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="hyperlinkLabel1MouseReleased"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="hyperlinkLabel1MouseExited"/>
             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="hyperlinkLabel1MouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="hyperlinkLabel1MouseExited"/>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="hyperlinkLabel1MouseReleased"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="heliumImg">
@@ -161,7 +161,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="heliumIntroLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&lt;html&gt;Get Organized has been rebuilt from the ground up as Helium, a new website. All the features you&apos;re used with Get Organized, a modern redesign, plus so much more!&lt;br /&gt;&lt;br /&gt;Past and present at-a-glance schedules are available anytime on any device. Create more flexible assignments and classes, retrieve a full workup of your grades at any time, get assignment notifications, request information from teachers, and so much more! Switch today!&lt;/html&gt;"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;A brand new school year means it&apos;s time for a new take on student success and organization, so we&apos;re pleased to announce Helium&amp;#8212;an innovative revamp replacing Get Organized.&lt;br /&gt;&lt;br /&gt;Helium is your ticket to the top of the class, with every tool you&apos;ll need for easier schedule management, more flexible assignment organization, due date notifications, and improved full-scope grade tracking in a sleek, easy-to-use, online format.&lt;/html&gt;"/>
             <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
         </Component>
@@ -174,18 +174,13 @@
         </Component>
         <Component class="javax.swing.JLabel" name="heliumIntroLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&lt;html&gt;Get Organized? Nope, Now We&apos;re Helium!&lt;/html&gt;"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;Looking to Get Organized? Try Helium Instead!&lt;/html&gt;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="heliumIntroLabel2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;a href=&quot;https://www.heliumedu.com&quot;&gt;www.heliumedu.com&lt;/a&gt;&lt;/html&gt;"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;Now web-based and mobile-friendly, Helium is Get Organized taken to the next level, with the goal of taking your success as a student to the next level with it.  Switch today!&lt;/html&gt;"/>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="hyperlinkLabel1MouseReleased"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="hyperlinkLabel1MouseExited"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="hyperlinkLabel1MouseEntered"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>
