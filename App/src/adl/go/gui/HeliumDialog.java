@@ -145,7 +145,7 @@ public class HeliumDialog extends EscapeDialog
 
         heliumIntroLabel1.setText("<html>Looking to Get Organized? Try Helium Instead!</html>");
 
-        heliumIntroLabel2.setText("<html>Now web-based and mobile-friendly, Helium is Get Organized taken to the next level, with the goal of taking your success as a student to the next level with it.  Switch today!</html>");
+        heliumIntroLabel2.setText("<html>Now web-based and mobile-friendly, Helium is Get Organized taken to the next level, with the goal of taking your success as a student to the next level with it.  And don't worry, your entire Get Organized schedule can be easily imported into Helium. Switch today!</html>");
 
         javax.swing.GroupLayout heliumJPanelLayout = new javax.swing.GroupLayout(heliumJPanel);
         heliumJPanel.setLayout(heliumJPanelLayout);
@@ -184,8 +184,8 @@ public class HeliumDialog extends EscapeDialog
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(heliumImg1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(heliumIntroLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(heliumIntroLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(hyperlinkLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(closeButtonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)

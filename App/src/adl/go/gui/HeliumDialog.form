@@ -85,8 +85,8 @@
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="heliumIntroLabel2" min="-2" pref="44" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="heliumIntroLabel2" min="-2" pref="65" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="hyperlinkLabel1" min="-2" pref="35" max="-2" attributes="1"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="closeButtonPanel" min="-2" pref="35" max="-2" attributes="0"/>
@@ -179,7 +179,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="heliumIntroLabel2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&lt;html&gt;Now web-based and mobile-friendly, Helium is Get Organized taken to the next level, with the goal of taking your success as a student to the next level with it.  Switch today!&lt;/html&gt;"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;Now web-based and mobile-friendly, Helium is Get Organized taken to the next level, with the goal of taking your success as a student to the next level with it.  And don&apos;t worry, your entire Get Organized schedule can be easily imported into Helium. Switch today!&lt;/html&gt;"/>
           </Properties>
         </Component>
       </SubComponents>
