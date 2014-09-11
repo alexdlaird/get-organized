@@ -501,7 +501,7 @@ public class GetOrganizedUpdater extends JFrame
                                                        + "and use it to overwrite the existing application at\n"
                                                        + file.getCanonicalPath() + "\n"
                                                        + "More simply, the update can be installed automatically\n"
-                                                       + "from* alexlaird.com.");
+                                                       + "from alexlaird.com/projects/get-organized.");
                                 OPTION_PANE.setMessageType(JOptionPane.ERROR_MESSAGE);
                                 JDialog optionDialog = OPTION_PANE.createDialog(frame, "Unable to Update Automatically");
                                 optionDialog.setVisible(true);
@@ -577,7 +577,7 @@ public class GetOrganizedUpdater extends JFrame
                         OPTION_PANE.setOptions(OK_CHOICE);
                         OPTION_PANE.setMessage("The update cannot be downloaded automatically for this\n"
                                                + "system. Please download the update manually from\n"
-                                               + "alexlaird.com.");
+                                               + "alexlaird.com/projects/get-organized.");
                         OPTION_PANE.setMessageType(JOptionPane.ERROR_MESSAGE);
                         JDialog optionDialog = OPTION_PANE.createDialog(frame, "Unable to Update Automatically");
                         optionDialog.setVisible(true);
@@ -585,7 +585,7 @@ public class GetOrganizedUpdater extends JFrame
                         {
                             try
                             {
-                                desktop.browse(new URI("http://alexlaird.com"));
+                                desktop.browse(new URI("http://alexlaird.com/projects/get-organized"));
                             }
                             catch (Exception ex)
                             {
@@ -600,7 +600,7 @@ public class GetOrganizedUpdater extends JFrame
                     updatesProgressBar.setIndeterminate(false);
                     OPTION_PANE.setOptions(OK_CHOICE);
                     OPTION_PANE.setMessage("An unknown error has occured. Try updating the application manually\n"
-                                           + "by going to* alexlaird.com.");
+                                           + "by going to alexlaird.com/projects/get-organized.");
                     OPTION_PANE.setMessageType(JOptionPane.ERROR_MESSAGE);
                     JDialog optionDialog = OPTION_PANE.createDialog(frame, "Unable to Update Automatically");
                     optionDialog.setVisible(true);
@@ -608,7 +608,7 @@ public class GetOrganizedUpdater extends JFrame
                     {
                         try
                         {
-                            desktop.browse(new URI("http://alexlaird.com"));
+                            desktop.browse(new URI("http://alexlaird.com/projects/get-organized"));
                         }
                         catch (Exception innerEx)
                         {
