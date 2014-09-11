@@ -45,7 +45,7 @@ Name: {commondesktop}\Get Organized; Filename: {app}\Get Organized.exe; IconFile
 
 [Run]
 Filename: {app}\Get Organized.exe; Description: Launch Get Organized; Flags: postinstall nowait skipifsilent
-Filename: "http://alexlaird.com/projects/get-organized/donate"; Description: Donate to Get Organized; Flags: postinstall shellexec skipifsilent runasoriginaluser
+Filename: "http://www.heliumedu.com"; Description: Switch to Helium; Flags: postinstall shellexec skipifsilent runasoriginaluser
 Filename: {app}\releasenotes.html; Description: View the Release Notes; Flags: postinstall shellexec skipifsilent unchecked
 
 [Code]

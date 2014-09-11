@@ -60,7 +60,7 @@ def server(verNum, getOrganizedDir, windowsPortable, jarPortable, windowsSetupFi
     
     if validCredentials:
         try:
-            ftp.cwd("/home/adlaird/domains/updates.alexlaird.com/public_html/get-organized")
+            ftp.cwd("/home/adlaird/public_html/updates.alexlaird.com/get-organized")
             print ("Pulling down current version.txt")
             versionOut = open(getOrganizedDir + "version.txt", "wb")
             ftp.retrbinary("RETR version.txt", versionOut.write)
@@ -144,12 +144,12 @@ def main(args):
     
     releaseNotes = storeDir + ".." + os.sep + "installer" + os.sep + "releasenotes.html"
     license = storeDir + ".." + os.sep + "installer" + os.sep + "license.html"
-
-    finalDistDir = storeDir + ".." + os.sep + ".." + os.sep + ".." + os.sep + ".." + os.sep + ".." + os.sep + ".." + os.sep + ".." + os.sep + "Get Organized" + os.sep
-	
-    windowsSetupFile = finalDistDir + "Installer" + os.sep + "GetOrganizedSetup.exe"
-    osxSetupFile = finalDistDir + "Installer" + os.sep + "GetOrganizedSetup.pkg.zip"
-    zipFile = finalDistDir + "Installer" + os.sep + "GetOrganized.zip"
+    
+    finalDistDir = storeDir + ".." + os.sep + ".." + os.sep + "Installers" + os.sep
+    
+    windowsSetupFile = finalDistDir + "GetOrganizedSetup.exe"
+    osxSetupFile = finalDistDir + "GetOrganizedSetup.pkg.zip"
+    zipFile = finalDistDir + "GetOrganized.zip"
     
     if os.path.exists(finalDistDir) and os.path.exists(storeDir) and os.path.exists(windowsPortable) and os.path.exists(jarPortable) and os.path.exists(windowsSetupFile) and os.path.exists(osxSetupFile) and os.path.exists(zipFile) and os.path.exists(releaseNotes) and os.path.exists(license):
         print ("::ALL NECESSARY FILES IN PLACE::\n")
