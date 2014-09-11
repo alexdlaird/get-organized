@@ -60,7 +60,7 @@ def server(verNum, getOrganizedDir, windowsPortable, jarPortable, windowsSetupFi
     
     if validCredentials:
         try:
-            ftp.cwd("/home/adlaird/public_html/updates.alexlaird.com/get-organized")
+            ftp.cwd("/public_html/updates.alexlaird.com/get-organized")
             print ("Pulling down current version.txt")
             versionOut = open(getOrganizedDir + "version.txt", "wb")
             ftp.retrbinary("RETR version.txt", versionOut.write)
